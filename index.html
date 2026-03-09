@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Mohaimin Chowdhury | Data Analyst</title>
 
   <style>
@@ -110,6 +109,43 @@
       margin-top: 0;
     }
 
+    /* Make card links NOT look like links (no blue/purple ever) */
+    .card-link,
+    .card-link:visited,
+    .card-link:hover,
+    .card-link:active,
+    .card-link:focus {
+      color: inherit;
+      text-decoration: none;
+      display: block;
+      outline: none;
+    }
+
+    /* Optional: nice hover effect for clickable cards */
+    .card-link .card {
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card-link:hover .card {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Keyboard accessibility */
+    .card-link:focus .card {
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35), 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    /* Cleaner lists inside cards */
+    .card ul {
+      margin: 10px 0 0 18px;
+      padding: 0;
+    }
+
+    .card li {
+      margin: 6px 0;
+    }
+
     footer {
       background: #1f2937;
       color: white;
@@ -138,12 +174,12 @@
   </header>
 
   <nav>
-  <a href="#about">About</a>
-  <a href="#skills">Skills</a>
-  <a href="#experience">Experience</a>
-  <a href="#projects">Projects</a>
-  <a href="#motorsport">Motorsport</a>
-  <a href="#contact">Contact</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#motorsport">Motorsport</a>
+    <a href="#contact">Contact</a>
   </nav>
 
   <div class="container">
@@ -173,66 +209,67 @@
     </section>
 
     <section id="skills">
-      <h2>Skills & Expertise</h2>
+      <h2>Skills &amp; Expertise</h2>
 
       <div class="skills">
         <div class="skill">Business Intelligence</div>
         <div class="skill">Power BI (Data Modeling, DAX, Dashboards)</div>
         <div class="skill">Advanced Excel (Power Query, Power Pivot)</div>
         <div class="skill">SQL</div>
-        <div class="skill">Operational & Manufacturing Analytics</div>
-        <div class="skill">Root Cause & Defect Analysis</div>
-        <div class="skill">Statistical Analysis & Decision Support</div>
+        <div class="skill">Operational &amp; Manufacturing Analytics</div>
+        <div class="skill">Root Cause &amp; Defect Analysis</div>
+        <div class="skill">Statistical Analysis &amp; Decision Support</div>
         <div class="skill">Cross‑Functional Performance Reporting</div>
         <div class="skill">Process Improvement</div>
       </div>
     </section>
+
     <section id="experience">
-  <h2>Notable Work Experience</h2>
+      <h2>Notable Work Experience</h2>
 
-  <div class="projects">
+      <div class="projects">
 
-    <!-- Hop Lun (clickable) -->
-    <a class="card-link" href="https://hoplun.com/" target="_blank" rel="noopener noreferrer">
-      <div class="card">
-        <h3>Data Analyst — Hop Lun</h3>
-        <p><strong>May 2025 – Present</strong></p>
-        <p>
-          Build end‑to‑end operational analytics systems for a global apparel
-          manufacturing environment with complex, multi‑stage production workflows.
-        </p>
-        <p>
-          Design standardized KPIs, relational data models, and real‑time Power BI
-          dashboards connecting cutting, sewing, inspection, operation and customer feedback
-          data to support faster root‑cause analysis and leadership decision‑making.
-        </p>
-        <p>
-          Drive manufacturing intelligence initiatives including defect analytics,
-          quick changeover performance, downtime visibility, SPC, and shipment
-          readiness tracking.
-        </p>
+        <!-- Hop Lun (clickable) -->
+        <a class="card-link" href="https://hoplun.com/" target="_blank" rel="noopener noreferrer">
+          <div class="card">
+            <h3>Data Analyst — Hop Lun</h3>
+            <p><strong>May 2025 – Present</strong></p>
+            <p>
+              Build end‑to‑end operational analytics systems for a global apparel
+              manufacturing environment with complex, multi‑stage production workflows.
+            </p>
+            <p>
+              Design standardized KPIs, relational data models, and real‑time Power BI
+              dashboards connecting cutting, sewing, inspection, operation and customer feedback
+              data to support faster root‑cause analysis and leadership decision‑making.
+            </p>
+            <p>
+              Drive manufacturing intelligence initiatives including defect analytics,
+              quick changeover performance, downtime visibility, SPC, and shipment
+              readiness tracking.
+            </p>
+          </div>
+        </a>
+
+        <!-- University of Chittagong (clickable) -->
+        <a class="card-link" href="https://cu.ac.bd/" target="_blank" rel="noopener noreferrer">
+          <div class="card">
+            <h3>Research Assistant — University of Chittagong</h3>
+            <p><strong>Nov 2024 – Jun 2025</strong></p>
+            <p>
+              Supported applied economics research through large‑scale survey design,
+              data cleaning, and statistical analysis.
+            </p>
+            <p>
+              Conducted regression analysis, hypothesis testing, and data validation
+              to generate evidence‑based insights for academic presentations and
+              policy‑oriented discussions.
+            </p>
+          </div>
+        </a>
+
       </div>
-    </a>
-
-    <!-- University of Chittagong (clickable) -->
-    <a class="card-link" href="https://cu.ac.bd/" target="_blank" rel="noopener noreferrer">
-      <div class="card">
-        <h3>Research Assistant — University of Chittagong</h3>
-        <p><strong>Nov 2024 – Jun 2025</strong></p>
-        <p>
-          Supported applied economics research through large‑scale survey design,
-          data cleaning, and statistical analysis.
-        </p>
-        <p>
-          Conducted regression analysis, hypothesis testing, and data validation
-          to generate evidence‑based insights for academic presentations and
-          policy‑oriented discussions.
-        </p>
-      </div>
-    </a>
-
-  </div>
-</section>
+    </section>
 
     <section id="projects">
       <h2>Featured Projects</h2>
@@ -261,62 +298,19 @@
       </div>
     </section>
 
-   <section id="motorsport">
+    <section id="motorsport">
+      <h2>Motorsport Analytics &amp; Experience</h2>
 
-  <h2>Motorsport Analytics &amp; Experience</h2>
+      <p>
+        Alongside my work in data analytics, I am actively involved in motorsport
+        operations and competitive racing, with experience spanning race officiating
+        and driver performance.
+      </p>
 
-  <p>
-    Alongside my work in data analytics, I am actively involved in motorsport
-    operations and competitive racing, with experience spanning race officiating
-    and driver performance.
-  </p>
+      <div class="projects">
 
-  <div class="projects">
-
-    <!-- Left: Race Official -->
-    <div class="card">
-      <h3>Race Official — Automobile Association of Bangladesh (AAB)</h3>
-      <p><strong>Event Experience</strong></p>
-      <ul>
-        <li>National Karting Championship — Chittagong, 2024</li>
-        <li>National Karting &amp; Auto Slalom Championship — Sylhet, 2024</li>
-        <li>Asia Pacific Motorsports Championship — Sri Lanka, 2025</li>
-      </ul>
-    </div>
-
-    <!-- Right: Driver & Competition -->
-    <div class="card">
-      <h3>Driver &amp; Competition</h3>
-      <p><strong>Racing Profile</strong></p>
-      <ul>
-        <li>Holds National Motorsports Driving License</li>
-        <li>National Esports &amp; Sim Racing Championship 2025 — Multiple podiums (AM Class)</li>
-        <li>National Endurance Sim Racing Championship 2025 — Winner (AM Class)</li>
-      </ul>
-    </div>
-
-  </div>
-
-</section>
-
-  </div><!-- /container -->
-
-  <footer id="contact">
-    <p><strong>Contact</strong></p>
-
-    <p>
-      WhatsApp: +8801306215571 &nbsp;|&nbsp;
-      Email: <a href="mailto:mchowdhury7426@gmail.com">mchowdhury7426@gmail.com</a>
-    </p>
-
-    <p>
-      <a href="https://www.linkedin.com/in/mohaimin-chowdhury-48a685223/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      &nbsp;|&nbsp;
-      <a href="https://github.com/mchowdhury7426" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </p>
-
-    <p>© 2026 Mohaimin Chowdhury</p>
-  </footer>
-
-</body>
-</html>
+        <div class="card">
+          <h3>Race Official — Automobile Association of Bangladesh (AAB)</h3>
+          <p><strong>Event Experience</strong></p>
+          <ul>
+            <li>National Karting Championship — Chittagong, 2024</li>
