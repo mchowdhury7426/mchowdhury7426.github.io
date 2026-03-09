@@ -2,257 +2,249 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Mohaimin Chowdhury | Data Analyst</title>
+  <title>Mohaimin Chowdhury | Data Analyst</title>
 
-<style>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0;
+      background: #f5f7fa;
+      color: #333;
+    }
 
-body{
-font-family: "Segoe UI", Arial;
-margin:0;
-background:#f5f7fa;
-color:#333;
-}
+    header {
+      background: #1f2937;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
 
-header{
-background:#1f2937;
-color:white;
-padding:40px 20px;
-text-align:center;
-}
-.profile-pic{
-  width:140px;
-  height:140px;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid rgba(255,255,255,0.85);
-  box-shadow:0 6px 18px rgba(0,0,0,0.25);
-  display:block;
-  margin:0 auto 16px auto; /* centers it + adds spacing below */
-}
+    .profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      display: block;
+      margin: 0 auto 16px auto;
+    }
 
-header h1{
-margin:0;
-font-size:38px;
-}
+    header h1 {
+      margin: 0;
+      font-size: 38px;
+    }
 
-header p{
-margin-top:10px;
-font-size:18px;
-opacity:0.9;
-}
+    header p {
+      margin-top: 10px;
+      font-size: 18px;
+      opacity: 0.9;
+    }
 
-nav{
-background:#111827;
-text-align:center;
-padding:12px;
-}
+    nav {
+      background: #111827;
+      text-align: center;
+      padding: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-nav a{
-color:white;
-margin:0 15px;
-text-decoration:none;
-font-weight:500;
-}
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-nav a:hover{
-color:#60a5fa;
-}
+    nav a:hover {
+      color: #60a5fa;
+    }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:40px 20px;
-}
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
 
-section{
-margin-bottom:50px;
-}
+    section {
+      margin-bottom: 50px;
+    }
 
-h2{
-border-left:5px solid #3b82f6;
-padding-left:10px;
-}
+    h2 {
+      border-left: 5px solid #3b82f6;
+      padding-left: 10px;
+      margin-bottom: 18px;
+    }
 
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-}
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
-.skill{
-background:#e5e7eb;
-padding:8px 14px;
-border-radius:6px;
-font-size:14px;
-}
+    .skill {
+      background: #e5e7eb;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
 
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 4px 10px rgba(0,0,0,0.08);
-}
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
 
-.card h3{
-margin-top:0;
-}
+    .card h3 {
+      margin-top: 0;
+    }
 
-footer{
-background:#1f2937;
-color:white;
-text-align:center;
-padding:20px;
-}
+    footer {
+      background: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 22px 18px;
+    }
 
-</style>
+    footer a {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
-
 
 <body>
 
-<header>
-<img src="profile-picture.png" alt="Mohaimin Chowdhury" class="profile-pic" />
+  <header>
+    <img src="profile-picture.png" alt="Mohaimin Chowdhury" class="profile-pic" />
+    <h1>Mohaimin Chowdhury</h1>
+    <p>Data Analyst | BI Developer | Operational Intelligence | Motorsport Analytics</p>
+  </header>
 
-<h1>Mohaimin Chowdhury</h1>
-<p>Data Analyst | BI Developer | Operational Intelligence | Motorsport Analytics </p>
-</header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#motorsport">Motorsport</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<nav>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#motorsport">Motorsport</a>
-<a href="#contact">Contact</a>
-</nav>
+  <div class="container">
 
+    <section id="about">
+      <h2>About Me</h2>
 
-<div class="container">
+      <p>
+        I am a Data Analyst focused on building scalable performance intelligence systems for complex, high‑volume
+        operations. My work bridges data, process, and decision‑making—transforming fragmented operational and quality
+        data into standardized KPIs, real‑time dashboards, and actionable insights for leadership teams.
+      </p>
 
-<section id="about">
+      <p>
+        In a global manufacturing environment, I design end‑to‑end analytics solutions using Excel, SQL, and Power BI,
+        connecting cutting, sewing, inspection, and customer feedback into a single analytical view. These systems
+        support faster root‑cause analysis, improve cross‑functional alignment, and enable timely, data‑driven
+        operational decisions.
+      </p>
 
-<h2>About Me</h2>
+      <p>
+        With a background in economics and applied statistics, I combine technical rigor with business understanding—working
+        closely with operations, quality, and management to improve efficiency, quality consistency, and delivery readiness.
+        I am driven by impact, ensuring analytics move beyond reporting to actively support performance improvement and strategic
+        execution.
+      </p>
+    </section>
 
-<p>
-I am a Data Analyst focused on building scalable performance intelligence systems for complex, high‑volume operations. My work bridges data, process, and decision‑making—transforming fragmented operational and quality data into standardized KPIs, real‑time dashboards, and actionable insights for leadership teams.
-</p>
+    <section id="skills">
+      <h2>Skills & Expertise</h2>
 
-<p>
-In a global manufacturing environment, I design end‑to‑end analytics solutions using Excel, SQL, and Power BI, connecting cutting, sewing, inspection, and customer feedback into a single analytical view. These systems support faster root‑cause analysis, improve cross‑functional alignment, and enable timely, data‑driven operational decisions.
-</p>
+      <div class="skills">
+        <div class="skill">Business Intelligence</div>
+        <div class="skill">Power BI (Data Modeling, DAX, Dashboards)</div>
+        <div class="skill">Advanced Excel (Power Query, Power Pivot)</div>
+        <div class="skill">SQL</div>
+        <div class="skill">Operational & Manufacturing Analytics</div>
+        <div class="skill">Root Cause & Defect Analysis</div>
+        <div class="skill">Statistical Analysis & Decision Support</div>
+        <div class="skill">Cross‑Functional Performance Reporting</div>
+        <div class="skill">Process Improvement</div>
+      </div>
+    </section>
 
-<p>
-With a background in economics and applied statistics, I combine technical rigor with business understanding—working closely with operations, quality, and management to improve efficiency, quality consistency, and delivery readiness. I am driven by impact, ensuring analytics move beyond reporting to actively support performance improvement and strategic execution.
-</p>
+    <section id="projects">
+      <h2>Featured Projects</h2>
 
-</section>
+      <div class="projects">
+        <div class="card">
+          <h3>Manufacturing Defect Analytics</h3>
+          <p>
+            Power BI dashboard designed to analyze production defects and identify operational root causes across production stages.
+          </p>
+        </div>
 
+        <div class="card">
+          <h3>Quick Changeover Dashboard</h3>
+          <p>
+            Analytics dashboard that tracks line readiness and operational efficiency to support continuous improvement initiatives.
+          </p>
+        </div>
 
-<section id="skills">
+        <div class="card">
+          <h3>Customer Feedback Analytics</h3>
+          <p>
+            Voice-of-Customer analytics framework connecting structured feedback to production defect analysis.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<h2>Skills & Expertise</h2>
+    <section id="motorsport">
+      <h2>Motorsport Analytics</h2>
 
-<div class="skills">
+      <p>
+        Alongside my work in data analytics, I have a strong interest in motorsport operations and race strategy analysis.
+      </p>
 
-<div class="skill">Business Intelligence</div>
-<div class="skill">Power BI (Data Modeling, DAX, Dashboards)</div>
-<div class="skill">Advanced Excel (Power Query, Power Pivot)</div>
-<div class="skill">SQL</div>
-<div class="skill">Operational & Manufacturing Analytics</div>
-<div class="skill">Root Cause & Defect Analysis</div>
-<div class="skill">Statistical Analysis & Decision Support</div>
-<div class="skill">Cross‑Functional Performance Reporting</div>
-<div class="skill">Process Improvement</div>
+      <p>
+        I served as a race official at the Asia Pacific Motorsport Championship 2025 in Sri Lanka and aim to apply data analytics to
+        race strategy, team performance analysis, and motorsport operations.
+      </p>
+    </section>
 
+  </div><!-- /container -->
 
-</section>
+  <footer id="contact">
+    <p><strong>Contact</strong></p>
 
-</div>
+    <p>
+      WhatsApp: +8801306215571 &nbsp;|&nbsp;
+      Email: <a href="mailto:mchowdhury7426@gmail.com">mchowdhury7426@gmail.com</a>
+    </p>
 
-</section>
+    <p>
+      <a href="https://www.linkedin.com/in/mohaimin-chowdhury-48a685223/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      &nbsp;|&nbsp;
+      <a href="https://github.com/mchowdhury7426" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </p>
 
-
-<section id="projects">
-
-<h2>Featured Projects</h2>
-
-<div class="projects">
-
-<div class="card">
-<h3>Manufacturing Defect Analytics</h3>
-<p>
-Power BI dashboard designed to analyze production defects and identify
-operational root causes across production stages.
-</p>
-</div>
-
-<div class="card">
-<h3>Quick Changeover Dashboard</h3>
-<p>
-Analytics dashboard that tracks line readiness and operational efficiency
-to support continuous improvement initiatives.
-</p>
-</div>
-
-<div class="card">
-<h3>Customer Feedback Analytics</h3>
-<p>
-Voice-of-Customer analytics framework connecting structured feedback
-to production defect analysis.
-</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section id="motorsport">
-
-<h2>Motorsport Analytics</h2>
-
-<p>
-Alongside my work in data analytics, I have a strong interest in motorsport
-operations and race strategy analysis.
-</p>
-
-<p>
-I served as a race official at the Asia Pacific Motorsport Championship 2025
-in Sri Lanka and aim to apply data analytics to race strategy,
-team performance analysis, and motorsport operations.
-</p>
-
-</section>
-
-
-<section id="contact">
-
-</div>
-
-
-<footer>
-  <p><strong>Contact</strong></p>
-  <p>
-    WhatsApp: +8801306215571 |
-    Email: mchowdhury7426@gmail.com
-  </p>
-  <p>
-    <a href="https://www.linkedin.com/in/mohaimin-chowdhury-48a685223/" target="_blank">LinkedIn</a> |
-    <a href="https://github.com/mchowdhury7426" target="_blank">GitHub</a>
-  </p>
-  <p>© 2026 Mohaimin Chowdhury</p>
-</footer>
+    <p>© 2026 Mohaimin Chowdhury</p>
+  </footer>
 
 </body>
-
 </html>
-
