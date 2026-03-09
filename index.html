@@ -14,6 +14,119 @@
       color: #333;
     }
 
+    /* ===== Animated Analytics Background Layer ===== */
+    .bg-analytics {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.22;
+      filter: saturate(1.1);
+    }
+
+    .bg-analytics svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Keep page content above background */
+    header, nav, .container, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Grid lines */
+    .bg-analytics .grid line {
+      stroke: rgba(17, 24, 39, 0.10);
+      stroke-width: 1;
+    }
+
+    /* Bars */
+    .bg-analytics .bar {
+      fill: rgba(59, 130, 246, 0.22);
+      rx: 6;
+      transform-origin: bottom;
+      animation: barPulse 3.2s ease-in-out infinite;
+    }
+
+    .bg-analytics .b1 { animation-delay: 0.0s; }
+    .bg-analytics .b2 { animation-delay: 0.4s; }
+    .bg-analytics .b3 { animation-delay: 0.8s; }
+    .bg-analytics .b4 { animation-delay: 1.2s; }
+    .bg-analytics .b5 { animation-delay: 1.6s; }
+
+    @keyframes barPulse {
+      0%, 100% { transform: scaleY(0.75); opacity: 0.6; }
+      50%      { transform: scaleY(1.15); opacity: 1; }
+    }
+
+    /* Line chart */
+    .bg-analytics .line {
+      fill: none;
+      stroke: rgba(96, 165, 250, 0.55);
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 1200;
+      stroke-dashoffset: 1200;
+      animation: lineDraw 5.8s ease-in-out infinite;
+    }
+
+    @keyframes lineDraw {
+      0%   { stroke-dashoffset: 1200; opacity: 0.25; }
+      35%  { stroke-dashoffset: 0;    opacity: 0.85; }
+      75%  { stroke-dashoffset: 0;    opacity: 0.65; }
+      100% { stroke-dashoffset: -1200; opacity: 0.25; }
+    }
+
+    /* KPI dots */
+    .bg-analytics .dot {
+      fill: rgba(59, 130, 246, 0.55);
+      transform-origin: center;
+      animation: dotPulse 2.6s ease-in-out infinite;
+    }
+
+    .bg-analytics .d1 { animation-delay: 0.0s; }
+    .bg-analytics .d2 { animation-delay: 0.5s; }
+    .bg-analytics .d3 { animation-delay: 1.0s; }
+    .bg-analytics .d4 { animation-delay: 1.5s; }
+
+    @keyframes dotPulse {
+      0%, 100% { transform: scale(0.9); opacity: 0.5; }
+      50%      { transform: scale(1.35); opacity: 1; }
+    }
+
+    /* Factory-flow conveyor path */
+    .bg-analytics .flow-path {
+      fill: none;
+      stroke: rgba(17, 24, 39, 0.18);
+      stroke-width: 3;
+      stroke-linecap: round;
+    }
+
+    .bg-analytics .flow-dot {
+      fill: rgba(96, 165, 250, 0.55);
+      opacity: 0.85;
+      animation: flowMove 4s linear infinite;
+    }
+
+    .bg-analytics .f1 { animation-delay: 0s; }
+    .bg-analytics .f2 { animation-delay: 1s; }
+    .bg-analytics .f3 { animation-delay: 2s; }
+    .bg-analytics .f4 { animation-delay: 3s; }
+
+    @keyframes flowMove {
+      0%   { transform: translate(120px, 640px); }
+      100% { transform: translate(1080px, 640px); }
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .bg-analytics * { animation: none !important; }
+      .bg-analytics { opacity: 0.12; }
+    }
+
+    /* ===== Your existing styles ===== */
     header {
       background: #1f2937;
       color: white;
@@ -49,7 +162,7 @@
       padding: 12px;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 10; /* keep above background */
     }
 
     nav a {
@@ -109,7 +222,7 @@
       margin-top: 0;
     }
 
-    /* Make card links NOT look like links (no blue/purple ever) */
+    /* Clickable card wrapper: NEVER blue/purple */
     .card-link,
     .card-link:visited,
     .card-link:hover,
@@ -121,7 +234,6 @@
       outline: none;
     }
 
-    /* Optional: nice hover effect for clickable cards */
     .card-link .card {
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
@@ -131,12 +243,10 @@
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
     }
 
-    /* Keyboard accessibility */
     .card-link:focus .card {
       box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35), 0 8px 18px rgba(0, 0, 0, 0.12);
     }
 
-    /* Cleaner lists inside cards */
     .card ul {
       margin: 10px 0 0 18px;
       padding: 0;
@@ -167,6 +277,61 @@
 
 <body>
 
+  <!-- ✅ Animated Analytics Background -->
+  <div class="bg-analytics" aria-hidden="true">
+    <svg viewBox="0 0 1200 700" preserveAspectRatio="none">
+      <!-- grid -->
+      <g class="grid">
+        <line x1="0" y1="100" x2="1200" y2="100"></line>
+        <line x1="0" y1="200" x2="1200" y2="200"></line>
+        <line x1="0" y1="300" x2="1200" y2="300"></line>
+        <line x1="0" y1="400" x2="1200" y2="400"></line>
+        <line x1="0" y1="500" x2="1200" y2="500"></line>
+        <line x1="0" y1="600" x2="1200" y2="600"></line>
+
+        <line x1="200" y1="0" x2="200" y2="700"></line>
+        <line x1="400" y1="0" x2="400" y2="700"></line>
+        <line x1="600" y1="0" x2="600" y2="700"></line>
+        <line x1="800" y1="0" x2="800" y2="700"></line>
+        <line x1="1000" y1="0" x2="1000" y2="700"></line>
+      </g>
+
+      <!-- bars -->
+      <g class="bars" transform="translate(70, 560)">
+        <rect class="bar b1" x="0"   y="-180" width="28" height="180"></rect>
+        <rect class="bar b2" x="50"  y="-120" width="28" height="120"></rect>
+        <rect class="bar b3" x="100" y="-220" width="28" height="220"></rect>
+        <rect class="bar b4" x="150" y="-90"  width="28" height="90"></rect>
+        <rect class="bar b5" x="200" y="-160" width="28" height="160"></rect>
+      </g>
+
+      <!-- line chart -->
+      <path class="line"
+        d="M 280 430
+           C 360 360, 430 520, 520 420
+           S 690 340, 760 400
+           S 900 520, 980 360
+           S 1120 300, 1180 340" />
+
+      <!-- KPI dots -->
+      <g class="kpi-dots">
+        <circle class="dot d1" cx="280" cy="430" r="6"></circle>
+        <circle class="dot d2" cx="520" cy="420" r="6"></circle>
+        <circle class="dot d3" cx="760" cy="400" r="6"></circle>
+        <circle class="dot d4" cx="980" cy="360" r="6"></circle>
+      </g>
+
+      <!-- factory flow -->
+      <path class="flow-path" d="M 120 640 H 1080" />
+      <g class="flow">
+        <circle class="flow-dot f1" r="5"></circle>
+        <circle class="flow-dot f2" r="5"></circle>
+        <circle class="flow-dot f3" r="5"></circle>
+        <circle class="flow-dot f4" r="5"></circle>
+      </g>
+    </svg>
+  </div>
+
   <header>
     <img src="profile-picture.png" alt="Mohaimin Chowdhury" class="profile-pic" />
     <h1>Mohaimin Chowdhury</h1>
@@ -196,15 +361,13 @@
       <p>
         In a global manufacturing environment, I design end‑to‑end analytics solutions using Excel, SQL, and Power BI,
         connecting cutting, sewing, inspection, operation and customer feedback into a single analytical view. These systems
-        support faster root‑cause analysis, improve cross‑functional alignment, and enable timely, data‑driven
-        operational decisions.
+        support faster root‑cause analysis, improve cross‑functional alignment, and enable timely, data‑driven operational decisions.
       </p>
 
       <p>
         With a background in economics and applied statistics, I combine technical rigor with business understanding—working
         closely with operations, quality, and management to improve efficiency, quality consistency, and delivery readiness.
-        I am driven by impact, ensuring analytics move beyond reporting to actively support performance improvement and strategic
-        execution.
+        I am driven by impact, ensuring analytics move beyond reporting to actively support performance improvement and strategic execution.
       </p>
     </section>
 
@@ -229,41 +392,35 @@
 
       <div class="projects">
 
-        <!-- Hop Lun (clickable) -->
-        <a class="card-link" href="https://www.hoplun.com/" target="_blank" rel="noopener noreferrer">
+        <a class="card-link" href="https://hoplun.com/" target="_blank" rel="noopener noreferrer">
           <div class="card">
             <h3>Data Analyst — Hop Lun</h3>
             <p><strong>May 2025 – Present</strong></p>
             <p>
-              Build end‑to‑end operational analytics systems for a global apparel
-              manufacturing environment with complex, multi‑stage production workflows.
+              Build end‑to‑end operational analytics systems for a global apparel manufacturing environment with complex,
+              multi‑stage production workflows.
             </p>
             <p>
-              Design standardized KPIs, relational data models, and real‑time Power BI
-              dashboards connecting cutting, sewing, inspection, operation and customer feedback
-              data to support faster root‑cause analysis and leadership decision‑making.
+              Design standardized KPIs, relational data models, and real‑time Power BI dashboards connecting cutting,
+              sewing, inspection, operation and customer feedback to support faster root‑cause analysis and leadership decision‑making.
             </p>
             <p>
-              Drive manufacturing intelligence initiatives including defect analytics,
-              quick changeover performance, downtime visibility, SPC, and shipment
-              readiness tracking.
+              Drive manufacturing intelligence initiatives including defect analytics, quick changeover performance,
+              downtime visibility, SPC, and shipment readiness tracking.
             </p>
           </div>
         </a>
 
-        <!-- University of Chittagong (clickable) -->
         <a class="card-link" href="https://cu.ac.bd/" target="_blank" rel="noopener noreferrer">
           <div class="card">
             <h3>Research Assistant — University of Chittagong</h3>
             <p><strong>Nov 2024 – Jun 2025</strong></p>
             <p>
-              Supported applied economics research through large‑scale survey design,
-              data cleaning, and statistical analysis.
+              Supported applied economics research through large‑scale survey design, data cleaning, and statistical analysis.
             </p>
             <p>
-              Conducted regression analysis, hypothesis testing, and data validation
-              to generate evidence‑based insights for academic presentations and
-              policy‑oriented discussions.
+              Conducted regression analysis, hypothesis testing, and data validation to generate evidence‑based insights for
+              academic presentations and policy‑oriented discussions.
             </p>
           </div>
         </a>
@@ -277,23 +434,17 @@
       <div class="projects">
         <div class="card">
           <h3>Manufacturing Defect Analytics</h3>
-          <p>
-            Power BI dashboard designed to analyze production defects and identify operational root causes across production stages.
-          </p>
+          <p>Power BI dashboard designed to analyze production defects and identify operational root causes across production stages.</p>
         </div>
 
         <div class="card">
           <h3>Quick Changeover Dashboard</h3>
-          <p>
-            Analytics dashboard that tracks line readiness and operational efficiency to support continuous improvement initiatives.
-          </p>
+          <p>Analytics dashboard that tracks line readiness and operational efficiency to support continuous improvement initiatives.</p>
         </div>
 
         <div class="card">
           <h3>Customer Feedback Analytics</h3>
-          <p>
-            Voice-of-Customer analytics framework connecting structured feedback to production defect analysis.
-          </p>
+          <p>Voice-of-Customer analytics framework connecting structured feedback to production defect analysis.</p>
         </div>
       </div>
     </section>
@@ -302,15 +453,52 @@
       <h2>Motorsport Analytics &amp; Experience</h2>
 
       <p>
-        Alongside my work in data analytics, I am actively involved in motorsport
-        operations and competitive racing, with experience spanning race officiating
-        and driver performance.
+        Alongside my work in data analytics, I am actively involved in motorsport operations and competitive racing,
+        with experience spanning race officiating and driver performance.
       </p>
 
       <div class="projects">
-
         <div class="card">
           <h3>Race Official — Automobile Association of Bangladesh (AAB)</h3>
           <p><strong>Event Experience</strong></p>
           <ul>
             <li>National Karting Championship — Chittagong, 2024</li>
+            <li>National Karting &amp; Auto Slalom Championship — Sylhet, 2024</li>
+            <li>Asia Pacific Motorsports Championship — Sri Lanka, 2025</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Driver &amp; Competition</h3>
+          <p><strong>Racing Profile</strong></p>
+          <ul>
+            <li>Holds National Motorsports Driving License</li>
+            <li>National Esports &amp; Sim Racing Championship 2025 — Multiple podiums (AM Class)</li>
+            <li>National Endurance Sim Racing Championship 2025 — Winner (AM Class)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+
+  <!-- ✅ Footer restored (as it was) -->
+  <footer id="contact">
+    <p><strong>Contact</strong></p>
+
+    <p>
+      WhatsApp: +8801306215571 &nbsp;|&nbsp;
+      Email: <a href="mailto:mchowdhury7426@gmail.com">mchowdhury7426@gmail.com</a>
+    </p>
+
+    <p>
+      <a href="https://www.linkedin.com/in/mohaimin-chowdhury-48a685223/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      &nbsp;|&nbsp;
+      <a href="https://github.com/mchowdhury7426" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </p>
+
+    <p>© 2026 Mohaimin Chowdhury</p>
+  </footer>
+
+</body>
+</html>
